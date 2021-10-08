@@ -51,6 +51,7 @@ namespace Przychodnia
             this.bDodaj.TabIndex = 0;
             this.bDodaj.Text = "Zarejestruj";
             this.bDodaj.UseVisualStyleBackColor = true;
+            this.bDodaj.Click += new System.EventHandler(this.bDodaj_Click);
             // 
             // label1
             // 
@@ -80,7 +81,6 @@ namespace Przychodnia
             this.dTPdata.Name = "dTPdata";
             this.dTPdata.Size = new System.Drawing.Size(200, 20);
             this.dTPdata.TabIndex = 4;
-            this.dTPdata.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // lImie
             // 
@@ -90,7 +90,6 @@ namespace Przychodnia
             this.lImie.Size = new System.Drawing.Size(26, 13);
             this.lImie.TabIndex = 5;
             this.lImie.Text = "Imie";
-            this.lImie.Click += new System.EventHandler(this.label2_Click);
             // 
             // lBadanie
             // 
@@ -127,7 +126,6 @@ namespace Przychodnia
             this.lGodzinaTeraz.Size = new System.Drawing.Size(35, 13);
             this.lGodzinaTeraz.TabIndex = 9;
             this.lGodzinaTeraz.Text = "label3";
-            this.lGodzinaTeraz.Click += new System.EventHandler(this.label3_Click);
             // 
             // tTimer
             // 

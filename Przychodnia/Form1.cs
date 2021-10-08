@@ -8,12 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Przychodnia
 {
+   
     public partial class Form1 : Form
     {
         private string terazData;
         private string terazCzas;
+        struct Dane
+        {
+            string Imie;
+            string Badanie;
+            DateTime Wizyta;
+
+        }
 
         public Form1()
         {
@@ -25,21 +34,7 @@ namespace Przychodnia
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime Date = DateTime.Today;
@@ -49,6 +44,13 @@ namespace Przychodnia
             lDataTeraz.Text = terazData;
             lGodzinaTeraz.Text = terazCzas;
 
+        }
+
+        private void bDodaj_Click(object sender, EventArgs e)
+        {
+
+           
+            
         }
     }
 }
