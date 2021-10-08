@@ -48,7 +48,8 @@ namespace Przychodnia
 
         private void bDodaj_Click(object sender, EventArgs e)
         {
-
+            
+            
            
             
         }
