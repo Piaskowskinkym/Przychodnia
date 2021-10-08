@@ -29,24 +29,28 @@ namespace Przychodnia
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.bDodaj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Limie = new System.Windows.Forms.Label();
-            this.Lbadanie = new System.Windows.Forms.Label();
-            this.Ldata = new System.Windows.Forms.Label();
+            this.tbImie = new System.Windows.Forms.TextBox();
+            this.tbBadanie = new System.Windows.Forms.TextBox();
+            this.dTPdata = new System.Windows.Forms.DateTimePicker();
+            this.lImie = new System.Windows.Forms.Label();
+            this.lBadanie = new System.Windows.Forms.Label();
+            this.lData = new System.Windows.Forms.Label();
+            this.lDataTeraz = new System.Windows.Forms.Label();
+            this.lGodzinaTeraz = new System.Windows.Forms.Label();
+            this.tTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // button1
+            // bDodaj
             // 
-            this.button1.Location = new System.Drawing.Point(603, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bDodaj.Location = new System.Drawing.Point(444, 35);
+            this.bDodaj.Name = "bDodaj";
+            this.bDodaj.Size = new System.Drawing.Size(174, 23);
+            this.bDodaj.TabIndex = 0;
+            this.bDodaj.Text = "Zarejestruj";
+            this.bDodaj.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -56,69 +60,96 @@ namespace Przychodnia
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 1;
             // 
-            // textBox1
+            // tbImie
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbImie.Location = new System.Drawing.Point(25, 34);
+            this.tbImie.Name = "tbImie";
+            this.tbImie.Size = new System.Drawing.Size(100, 20);
+            this.tbImie.TabIndex = 2;
             // 
-            // textBox2
+            // tbBadanie
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.tbBadanie.Location = new System.Drawing.Point(131, 34);
+            this.tbBadanie.Name = "tbBadanie";
+            this.tbBadanie.Size = new System.Drawing.Size(100, 20);
+            this.tbBadanie.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dTPdata
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(238, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dTPdata.Location = new System.Drawing.Point(238, 34);
+            this.dTPdata.Name = "dTPdata";
+            this.dTPdata.Size = new System.Drawing.Size(200, 20);
+            this.dTPdata.TabIndex = 4;
+            this.dTPdata.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // Limie
+            // lImie
             // 
-            this.Limie.AutoSize = true;
-            this.Limie.Location = new System.Drawing.Point(22, 18);
-            this.Limie.Name = "Limie";
-            this.Limie.Size = new System.Drawing.Size(26, 13);
-            this.Limie.TabIndex = 5;
-            this.Limie.Text = "Imie";
-            this.Limie.Click += new System.EventHandler(this.label2_Click);
+            this.lImie.AutoSize = true;
+            this.lImie.Location = new System.Drawing.Point(22, 18);
+            this.lImie.Name = "lImie";
+            this.lImie.Size = new System.Drawing.Size(26, 13);
+            this.lImie.TabIndex = 5;
+            this.lImie.Text = "Imie";
+            this.lImie.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Lbadanie
+            // lBadanie
             // 
-            this.Lbadanie.AutoSize = true;
-            this.Lbadanie.Location = new System.Drawing.Point(128, 18);
-            this.Lbadanie.Name = "Lbadanie";
-            this.Lbadanie.Size = new System.Drawing.Size(82, 13);
-            this.Lbadanie.TabIndex = 6;
-            this.Lbadanie.Text = "Nazwa Badania";
+            this.lBadanie.AutoSize = true;
+            this.lBadanie.Location = new System.Drawing.Point(128, 18);
+            this.lBadanie.Name = "lBadanie";
+            this.lBadanie.Size = new System.Drawing.Size(82, 13);
+            this.lBadanie.TabIndex = 6;
+            this.lBadanie.Text = "Nazwa Badania";
             // 
-            // Ldata
+            // lData
             // 
-            this.Ldata.AutoSize = true;
-            this.Ldata.Location = new System.Drawing.Point(235, 18);
-            this.Ldata.Name = "Ldata";
-            this.Ldata.Size = new System.Drawing.Size(72, 13);
-            this.Ldata.TabIndex = 7;
-            this.Ldata.Text = "Data Badania";
+            this.lData.AutoSize = true;
+            this.lData.Location = new System.Drawing.Point(235, 18);
+            this.lData.Name = "lData";
+            this.lData.Size = new System.Drawing.Size(72, 13);
+            this.lData.TabIndex = 7;
+            this.lData.Text = "Data Badania";
+            // 
+            // lDataTeraz
+            // 
+            this.lDataTeraz.AutoSize = true;
+            this.lDataTeraz.Location = new System.Drawing.Point(13, 358);
+            this.lDataTeraz.Name = "lDataTeraz";
+            this.lDataTeraz.Size = new System.Drawing.Size(35, 13);
+            this.lDataTeraz.TabIndex = 8;
+            this.lDataTeraz.Text = "label2";
+            // 
+            // lGodzinaTeraz
+            // 
+            this.lGodzinaTeraz.AutoSize = true;
+            this.lGodzinaTeraz.Location = new System.Drawing.Point(90, 358);
+            this.lGodzinaTeraz.Name = "lGodzinaTeraz";
+            this.lGodzinaTeraz.Size = new System.Drawing.Size(35, 13);
+            this.lGodzinaTeraz.TabIndex = 9;
+            this.lGodzinaTeraz.Text = "label3";
+            this.lGodzinaTeraz.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // tTimer
+            // 
+            this.tTimer.Enabled = true;
+            this.tTimer.Interval = 10000;
+            this.tTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Ldata);
-            this.Controls.Add(this.Lbadanie);
-            this.Controls.Add(this.Limie);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(633, 383);
+            this.Controls.Add(this.lGodzinaTeraz);
+            this.Controls.Add(this.lDataTeraz);
+            this.Controls.Add(this.lData);
+            this.Controls.Add(this.lBadanie);
+            this.Controls.Add(this.lImie);
+            this.Controls.Add(this.dTPdata);
+            this.Controls.Add(this.tbBadanie);
+            this.Controls.Add(this.tbImie);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bDodaj);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -129,14 +160,17 @@ namespace Przychodnia
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bDodaj;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label Limie;
-        private System.Windows.Forms.Label Lbadanie;
-        private System.Windows.Forms.Label Ldata;
+        private System.Windows.Forms.TextBox tbImie;
+        private System.Windows.Forms.TextBox tbBadanie;
+        private System.Windows.Forms.DateTimePicker dTPdata;
+        private System.Windows.Forms.Label lImie;
+        private System.Windows.Forms.Label lBadanie;
+        private System.Windows.Forms.Label lData;
+        private System.Windows.Forms.Label lDataTeraz;
+        private System.Windows.Forms.Label lGodzinaTeraz;
+        private System.Windows.Forms.Timer tTimer;
     }
 }
 

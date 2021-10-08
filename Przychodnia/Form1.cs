@@ -12,6 +12,8 @@ namespace Przychodnia
 {
     public partial class Form1 : Form
     {
+        private string terazData;
+
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +31,19 @@ namespace Przychodnia
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime Date = DateTime.Today;
+            terazData =  Date.ToString("d");
+            lDataTeraz.Text = terazData;
 
         }
     }
