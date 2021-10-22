@@ -44,6 +44,10 @@ namespace Przychodnia
             this.lp1imie = new System.Windows.Forms.Label();
             this.lp1nazwab = new System.Windows.Forms.Label();
             this.lp1data = new System.Windows.Forms.Label();
+            this.lBlad = new System.Windows.Forms.Label();
+            this.bPrzod = new System.Windows.Forms.Button();
+            this.pTyl = new System.Windows.Forms.Button();
+            this.bUsun = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bDodaj
@@ -167,11 +171,54 @@ namespace Przychodnia
             this.lp1data.TabIndex = 12;
             this.lp1data.Text = "label4";
             // 
+            // lBlad
+            // 
+            this.lBlad.AutoSize = true;
+            this.lBlad.Location = new System.Drawing.Point(12, 257);
+            this.lBlad.Name = "lBlad";
+            this.lBlad.Size = new System.Drawing.Size(35, 13);
+            this.lBlad.TabIndex = 13;
+            this.lBlad.Text = "label2";
+            // 
+            // bPrzod
+            // 
+            this.bPrzod.Location = new System.Drawing.Point(238, 179);
+            this.bPrzod.Name = "bPrzod";
+            this.bPrzod.Size = new System.Drawing.Size(75, 23);
+            this.bPrzod.TabIndex = 14;
+            this.bPrzod.Text = ">";
+            this.bPrzod.UseVisualStyleBackColor = true;
+            this.bPrzod.Click += new System.EventHandler(this.bPrzod_Click);
+            // 
+            // pTyl
+            // 
+            this.pTyl.Location = new System.Drawing.Point(135, 179);
+            this.pTyl.Name = "pTyl";
+            this.pTyl.Size = new System.Drawing.Size(75, 23);
+            this.pTyl.TabIndex = 15;
+            this.pTyl.Text = "<";
+            this.pTyl.UseVisualStyleBackColor = true;
+            this.pTyl.Click += new System.EventHandler(this.pTyl_Click);
+            // 
+            // bUsun
+            // 
+            this.bUsun.Location = new System.Drawing.Point(444, 78);
+            this.bUsun.Name = "bUsun";
+            this.bUsun.Size = new System.Drawing.Size(75, 23);
+            this.bUsun.TabIndex = 16;
+            this.bUsun.Text = "Usuń";
+            this.bUsun.UseVisualStyleBackColor = true;
+            this.bUsun.Click += new System.EventHandler(this.bUsun_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 383);
+            this.Controls.Add(this.bUsun);
+            this.Controls.Add(this.pTyl);
+            this.Controls.Add(this.bPrzod);
+            this.Controls.Add(this.lBlad);
             this.Controls.Add(this.lp1data);
             this.Controls.Add(this.lp1nazwab);
             this.Controls.Add(this.lp1imie);
@@ -209,6 +256,10 @@ namespace Przychodnia
         private System.Windows.Forms.Label lp1imie;
         private System.Windows.Forms.Label lp1nazwab;
         private System.Windows.Forms.Label lp1data;
+        private System.Windows.Forms.Label lBlad;
+        private System.Windows.Forms.Button bPrzod;
+        private System.Windows.Forms.Button pTyl;
+        private System.Windows.Forms.Button bUsun;
     }
 }
 

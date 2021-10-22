@@ -8,28 +8,53 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Przychodnia
 {
-   
+
     public partial class Form1 : Form
     {
         private string databadania;
         private string terazData;
         private string terazCzas;
-        struct pacjenci
-        {
-           public string imie;
-           public string badanie;
-           public string data;
-        }
-        Queue<pacjenci> Badanie = new Queue<pacjenci>();
        
+
         public Form1()
         {
             InitializeComponent();
         }
-
+        string[] kolejka = new string[100];
+        int poczatek = -1;
+        int koniec = -1;
+        int r = 100;
+        int pozycja = 3;
+       
+        void Insert(string imie, string badanie, string data)
+        {
+            if(koniec == r - 1)
+            {
+                lBlad.Text = "TABLICA PRZEPEŁNIONA!";
+            }
+            else
+            {
+                if(poczatek == - 1)
+                {
+                    koniec++;
+                    kolejka[koniec] = imie;
+                    koniec++;
+                    kolejka[koniec] = badanie;
+                    koniec++;
+                    kolejka[koniec] = data;
+                  
+                    
+                }
+            }
+        }
+        void Delete()
+        {
+            
+                poczatek = +3;
+            
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -38,6 +63,7 @@ namespace Przychodnia
         
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             DateTime Date = DateTime.Today;
             DateTime Time = DateTime.Now;
             terazCzas = Time.ToString("hh:mm");
@@ -49,8 +75,13 @@ namespace Przychodnia
 
         private void bDodaj_Click(object sender, EventArgs e)
         {
-            pacjenci pacjent1 = new pacjenci { imie = tbImie.Text, badanie = tbBadanie.Text, data = dTPdata.ToString() };
-            Badanie.Enqueue(pacjent1);
+            
+           
+            string imie = tbImie.Text;
+            string badanie = tbBadanie.Text;
+            string data = dTPdata.Value.ToString("yyyy-MM-dd");
+            Insert(imie,badanie,data);
+            Display();
         }
 
         private void lDataTeraz_Click(object sender, EventArgs e)
@@ -66,6 +97,26 @@ namespace Przychodnia
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        
+
+        private void pTyl_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void bPrzod_Click(object sender, EventArgs e)
+        {
+            lp1imie.Text = kolejka[0 + pozycja];
+            lp1nazwab.Text = kolejka[1 + pozycja];
+            lp1data.Text = kolejka[2 + pozycja];
+            pozycja += 3;
+        }
+
+        private void bUsun_Click(object sender, EventArgs e)
+        {
+            Delete();
         }
     }
 }
