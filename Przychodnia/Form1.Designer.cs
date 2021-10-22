@@ -41,6 +41,9 @@ namespace Przychodnia
             this.lDataTeraz = new System.Windows.Forms.Label();
             this.lGodzinaTeraz = new System.Windows.Forms.Label();
             this.tTimer = new System.Windows.Forms.Timer(this.components);
+            this.lp1imie = new System.Windows.Forms.Label();
+            this.lp1nazwab = new System.Windows.Forms.Label();
+            this.lp1data = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bDodaj
@@ -81,6 +84,8 @@ namespace Przychodnia
             this.dTPdata.Name = "dTPdata";
             this.dTPdata.Size = new System.Drawing.Size(200, 20);
             this.dTPdata.TabIndex = 4;
+            this.dTPdata.Value = new System.DateTime(2021, 10, 22, 12, 14, 59, 0);
+            this.dTPdata.ValueChanged += new System.EventHandler(this.dTPdata_ValueChanged);
             // 
             // lImie
             // 
@@ -114,18 +119,19 @@ namespace Przychodnia
             this.lDataTeraz.AutoSize = true;
             this.lDataTeraz.Location = new System.Drawing.Point(13, 358);
             this.lDataTeraz.Name = "lDataTeraz";
-            this.lDataTeraz.Size = new System.Drawing.Size(35, 13);
+            this.lDataTeraz.Size = new System.Drawing.Size(28, 13);
             this.lDataTeraz.TabIndex = 8;
-            this.lDataTeraz.Text = "label2";
+            this.lDataTeraz.Text = "data";
+            this.lDataTeraz.Click += new System.EventHandler(this.lDataTeraz_Click);
             // 
             // lGodzinaTeraz
             // 
             this.lGodzinaTeraz.AutoSize = true;
             this.lGodzinaTeraz.Location = new System.Drawing.Point(90, 358);
             this.lGodzinaTeraz.Name = "lGodzinaTeraz";
-            this.lGodzinaTeraz.Size = new System.Drawing.Size(35, 13);
+            this.lGodzinaTeraz.Size = new System.Drawing.Size(29, 13);
             this.lGodzinaTeraz.TabIndex = 9;
-            this.lGodzinaTeraz.Text = "label3";
+            this.lGodzinaTeraz.Text = "czas";
             // 
             // tTimer
             // 
@@ -133,11 +139,42 @@ namespace Przychodnia
             this.tTimer.Interval = 10000;
             this.tTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lp1imie
+            // 
+            this.lp1imie.AutoSize = true;
+            this.lp1imie.Location = new System.Drawing.Point(35, 128);
+            this.lp1imie.Name = "lp1imie";
+            this.lp1imie.Size = new System.Drawing.Size(35, 13);
+            this.lp1imie.TabIndex = 10;
+            this.lp1imie.Text = "label2";
+            this.lp1imie.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lp1nazwab
+            // 
+            this.lp1nazwab.AutoSize = true;
+            this.lp1nazwab.Location = new System.Drawing.Point(128, 128);
+            this.lp1nazwab.Name = "lp1nazwab";
+            this.lp1nazwab.Size = new System.Drawing.Size(35, 13);
+            this.lp1nazwab.TabIndex = 11;
+            this.lp1nazwab.Text = "label3";
+            // 
+            // lp1data
+            // 
+            this.lp1data.AutoSize = true;
+            this.lp1data.Location = new System.Drawing.Point(235, 128);
+            this.lp1data.Name = "lp1data";
+            this.lp1data.Size = new System.Drawing.Size(35, 13);
+            this.lp1data.TabIndex = 12;
+            this.lp1data.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 383);
+            this.Controls.Add(this.lp1data);
+            this.Controls.Add(this.lp1nazwab);
+            this.Controls.Add(this.lp1imie);
             this.Controls.Add(this.lGodzinaTeraz);
             this.Controls.Add(this.lDataTeraz);
             this.Controls.Add(this.lData);
@@ -169,6 +206,9 @@ namespace Przychodnia
         private System.Windows.Forms.Label lDataTeraz;
         private System.Windows.Forms.Label lGodzinaTeraz;
         private System.Windows.Forms.Timer tTimer;
+        private System.Windows.Forms.Label lp1imie;
+        private System.Windows.Forms.Label lp1nazwab;
+        private System.Windows.Forms.Label lp1data;
     }
 }
 

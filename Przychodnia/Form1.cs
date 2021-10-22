@@ -14,16 +14,17 @@ namespace Przychodnia
    
     public partial class Form1 : Form
     {
+        private string databadania;
         private string terazData;
         private string terazCzas;
-        struct Dane
+        struct pacjenci
         {
-            string Imie;
-            string Badanie;
-            DateTime Wizyta;
-
+           public string imie;
+           public string badanie;
+           public string data;
         }
-
+        Queue<pacjenci> Badanie = new Queue<pacjenci>();
+       
         public Form1()
         {
             InitializeComponent();
@@ -48,10 +49,23 @@ namespace Przychodnia
 
         private void bDodaj_Click(object sender, EventArgs e)
         {
-            
-            
-           
-            
+            pacjenci pacjent1 = new pacjenci { imie = tbImie.Text, badanie = tbBadanie.Text, data = dTPdata.ToString() };
+            Badanie.Enqueue(pacjent1);
+        }
+
+        private void lDataTeraz_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dTPdata_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
